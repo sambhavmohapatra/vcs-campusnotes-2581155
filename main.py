@@ -36,8 +36,9 @@ def view_notes(notes):
         print(note["content"])
 
 
+
 def search_notes(notes):
-    keyword = input("Enter search keyword: ").lower()
+    keyword = input("Enter search keyword: ").strip().lower()
 
     found = False
 
