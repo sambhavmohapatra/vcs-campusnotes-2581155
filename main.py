@@ -92,6 +92,7 @@ def main():
 
     while True:
         print("\n===== CAMPUSNOTES =====")
+        
         print("1. Add Note")
         print("2. View Notes")
         print("3. Search Notes")
