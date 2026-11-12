@@ -97,6 +97,7 @@ def main():
         print("4. Edit Note")
         print("5. Delete Note")
         print("6. Exit")
+        print("7. Count Total Notes")
 
         choice = input("Enter your choice: ")
 
@@ -113,8 +114,8 @@ def main():
         elif choice == "6":
             print("Thank you for using CampusNotes!")
             break
-        else:
-            print("Invalid choice. Try again.")
+        elif choice == "7":
+            print(f"Total notes: {len(notes)}")
 
 
 if __name__ == "__main__":
