@@ -38,3 +38,4 @@ python main.py
 ## Project Purpose
 
 CampusNotes helps students organize academic information and manage study notes efficiently.
+- GitHub clone and remote synchronization verified.
