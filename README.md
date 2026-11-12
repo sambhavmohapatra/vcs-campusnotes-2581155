@@ -39,3 +39,15 @@ python main.py
 
 CampusNotes helps students organize academic information and manage study notes efficiently.
 - GitHub clone and remote synchronization verified.
+
+
+## Recent Updates
+
+- Added a total notes counter to track saved notes.
+- Improved note searching by handling unnecessary spaces.
+- Added a message when no matching notes are found.
+
+## Version History
+
+- v0.1.0 - Initial CampusNotes project setup.
+- v1.0.0 - Updated notes management and search functionality.
