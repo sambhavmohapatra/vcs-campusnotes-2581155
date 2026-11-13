@@ -1,0 +1,20 @@
+#!/bin/sh
+
+COMMIT_MSG_FILE="$1"
+MESSAGE=$(head -n 1 "$COMMIT_MSG_FILE")
+
+echo "Checking commit message..."
+
+if [ "${#MESSAGE}" -lt 10 ]; then
+    echo "ERROR: Commit message must be at least 10 characters."
+    exit 1
+fi
+
+if ! printf '%s\n' "$MESSAGE" | grep -Eq '^(feat|fix|docs|refactor|chore):'; then
+    echo "ERROR: Invalid commit message prefix."
+    echo "Allowed: feat:, fix:, docs:, refactor:, chore:"
+    exit 1
+fi
+
+echo "Commit message check passed."
+exit 0

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "Checking staged project files for unfinished markers..."
+
+if git grep --cached -I -n -E 'TODO|FIXME' -- . ':!/.githooks'; then
+    echo "ERROR: Staged project files contain unfinished markers."
+    echo "Commit rejected."
+    exit 1
+fi
+
+echo "Pre-commit check passed."
+exit 0
