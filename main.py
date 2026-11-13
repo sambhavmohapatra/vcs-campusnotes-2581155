@@ -17,16 +17,18 @@ def save_notes(notes):
         json.dump(notes, file, indent=4)
 
 
+
 def add_note(notes):
     title = input("Enter note title: ").strip()
-    content = input("Enter note content: ").strip()
 
     if not title:
-        print("Note title cannot be empty.")
+        print("Note title cannot be empty. No changes were saved.")
         return
 
+    content = input("Enter note content: ").strip()
+
     if not content:
-        print("Note content cannot be empty.")
+        print("Note content cannot be empty. No changes were saved.")
         return
 
     notes.append({"title": title, "content": content})
@@ -60,6 +62,7 @@ def search_notes(notes):
         print("No matching notes found.")
 
 
+
 def edit_note(notes):
     view_notes(notes)
 
@@ -68,14 +71,15 @@ def edit_note(notes):
 
         if 1 <= number <= len(notes):
             new_title = input("New title: ").strip()
-            new_content = input("New content: ").strip()
 
             if not new_title:
-                print("Note title cannot be empty.")
+                print("Note title cannot be empty. No changes were saved.")
                 return
 
+            new_content = input("New content: ").strip()
+
             if not new_content:
-                print("Note content cannot be empty.")
+                print("Note content cannot be empty. No changes were saved.")
                 return
 
             notes[number - 1]["title"] = new_title
@@ -87,6 +91,7 @@ def edit_note(notes):
 
     except ValueError:
         print("Please enter a valid number.")
+
 
 
 def delete_note(notes):
