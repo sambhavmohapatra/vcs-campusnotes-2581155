@@ -18,8 +18,16 @@ def save_notes(notes):
 
 
 def add_note(notes):
-    title = input("Enter note title: ")
-    content = input("Enter note content: ")
+    title = input("Enter note title: ").strip()
+    content = input("Enter note content: ").strip()
+
+    if not title:
+        print("Note title cannot be empty.")
+        return
+
+    if not content:
+        print("Note content cannot be empty.")
+        return
 
     notes.append({"title": title, "content": content})
     save_notes(notes)
@@ -59,8 +67,19 @@ def edit_note(notes):
         number = int(input("Enter note number to edit: "))
 
         if 1 <= number <= len(notes):
-            notes[number - 1]["title"] = input("New title: ")
-            notes[number - 1]["content"] = input("New content: ")
+            new_title = input("New title: ").strip()
+            new_content = input("New content: ").strip()
+
+            if not new_title:
+                print("Note title cannot be empty.")
+                return
+
+            if not new_content:
+                print("Note content cannot be empty.")
+                return
+
+            notes[number - 1]["title"] = new_title
+            notes[number - 1]["content"] = new_content
             save_notes(notes)
             print("Note updated successfully!")
         else:
